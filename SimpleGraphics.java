@@ -6,8 +6,8 @@ import java.net.URL;
 
 public class SimpleGraphics extends JPanel implements ActionListener, MouseListener {
 
-    int x = 0, y = 0; // initial values
-    int dx = 3, dy = 3; // movement speed
+    int x = 0, y = 0;
+    int dx = 3, dy = 3; 
     Timer timer;
     ImageIcon icon;
     Image backgroundImage;
@@ -19,10 +19,10 @@ public class SimpleGraphics extends JPanel implements ActionListener, MouseListe
         } catch (Exception e) {
             e.printStackTrace();
         }
-        timer = new Timer(10, this); // call action every 10ms
-        timer.start(); // start animation
-        addMouseListener(this); // we listen to mouse clicks
-        setBorder(BorderFactory.createLineBorder(Color.pink, 5)); //optional
+        timer = new Timer(10, this);
+        timer.start();
+        addMouseListener(this);
+        setBorder(BorderFactory.createLineBorder(Color.pink, 5));
     }
 
     @Override
@@ -30,19 +30,19 @@ public class SimpleGraphics extends JPanel implements ActionListener, MouseListe
         super.paintComponent(g);
 
         g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
-        icon.paintIcon(this, g, x, y); // draw the moving image
+        icon.paintIcon(this, g, x, y);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        x += dx; // update x position
-        y += dy; // update y position
+        x += dx;
+        y += dy;
 
         if (x < 0 || x + icon.getIconWidth() > getWidth()) {
-            dx = -dx; // bounce off left/right edges
+            dx = -dx;
         }
         if (y < 0 || y + icon.getIconHeight() > getHeight()) {
-            dy = -dy; // bounce off top/bottom edges
+            dy = -dy;
         }
 
         repaint(); // ask panel to redraw
