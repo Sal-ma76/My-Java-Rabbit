@@ -25,4 +25,4 @@ The SimpleGraphics project is a Java application that demonstrates basic animati
 - Internet connection (to load images from URLs)
 
 ## Author
-[Your Name] - [Your Contact Information]
+[Salma Sherif] - [salmasherif9882@gmail.com]
